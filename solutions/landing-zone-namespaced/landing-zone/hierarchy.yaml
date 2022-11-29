@@ -13,7 +13,7 @@
 # limitations under the License.
 apiVersion: blueprints.cloud.google.com/v1alpha3
 kind: ResourceHierarchy
-metadata: # kpt-merge: config-control/landing-zone-hierarchy
+metadata:
   name: landing-zone-hierarchy
   namespace: hierarchy
   annotations:
