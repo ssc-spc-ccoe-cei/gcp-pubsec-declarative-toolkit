@@ -34,14 +34,12 @@ spec:
     - Automation:
         $subtree: tenants
     - "Common Services"
-  subtrees:  
+  subtrees:
     tenants:
       - tenant1:
           - Unclass
           - PBMM
-      - tenant2:
+      - tenantN:
           - Unclass
           - PBMM
-      - tenant3:
-          - Unclass
-          - PBMM
+          
