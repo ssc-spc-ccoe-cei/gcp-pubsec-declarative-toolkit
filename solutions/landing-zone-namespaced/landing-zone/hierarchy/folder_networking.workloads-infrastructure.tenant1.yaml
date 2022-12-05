@@ -1,0 +1,9 @@
+apiVersion: resourcemanager.cnrm.cloud.google.com/v1beta1
+kind: Folder
+metadata:
+  name: networking.workloads-infrastructure.tenant1
+  namespace: hierarchy
+spec:
+  displayName: tenant1
+  folderRef:
+    name: networking.workloads-infrastructure
