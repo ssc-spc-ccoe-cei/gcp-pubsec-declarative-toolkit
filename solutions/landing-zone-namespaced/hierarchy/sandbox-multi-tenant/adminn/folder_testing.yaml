@@ -1,9 +1,9 @@
 apiVersion: resourcemanager.cnrm.cloud.google.com/v1beta1
 kind: Folder
 metadata:
-  name: testing.unittest
+  name: testing.adminn
   namespace: hierarchy
 spec:
-  displayName: Unittest
+  displayName: adminn
   folderRef:
     name: testing
