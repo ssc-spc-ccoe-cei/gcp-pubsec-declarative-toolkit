@@ -2,9 +2,6 @@ apiVersion: resourcemanager.cnrm.cloud.google.com/v1beta1
 kind: Folder
 metadata:
   name: workloads
-  annotations:
-    internal.kpt.dev/upstream-identifier: blueprints.cloud.google.com|ResourceHierarchy|hierarchy|landing-zone-hierarchy
-    cnrm.cloud.google.com/blueprint: 'kpt-fn'
   namespace: hierarchy
 spec:
   displayName: Workloads
