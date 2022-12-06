@@ -57,4 +57,34 @@ data:
   log-writer: group@domain.com
   log-reader: group@domain.com
   organization-viewer: group@domain.com
+  #############
+  # Org Policies
+  # The following are Settings for some org policies defined in 'policies/org-policies'
+  #
+  # a list of allowed trusted image projects, see YAML file for more info:
+  # policies/org-policies/compute-trusted-image-projects.yaml
+  # this setting can be left as default or modified as required
+  allowed-trusted-image-projects: |
+    - "projects/cos-cloud"
+  # a list of allowed essential contact domains, see YAML file for more info:
+  # policies/org-policies/essentialcontacts-allowed-contact-domains.yaml
+  # this setting MUST be changed
+  allowed-contact-domains: |
+    - "@example.com"
+  # a list of directory customer IDs from which users can be added to IAM policies, see YAML file for more info:
+  # policies/org-policies/iam-allowed-policy-member-domains.yaml
+  # this setting MUST be changed to include the GCP org's directory ID and any other directory containing users that will need IAM roles assigned
+  allowed-policy-domain-members: |
+    - "DIRECTORY_CUSTOMER_ID"
+  # a list of allowed projects, folders, networks for VPC peering, see YAML file for more info:
+  # policies/org-policies/compute-restrict-vpc-peering.yaml
+  # this setting MUST be changed to include the management project ID
+  allowed-vpc-peering: |
+    - "under:projects/MANAGEMENT_PROJECT_ID"
+  # a list of allowed projects, folders, networks where VMs can IP forward, see YAML file for more info:
+  # policies/org-policies/compute-vm-can-ip-forward.yaml
+  # this setting MUST be changed to include the management project ID
+  allowed-vm-can-ip-forward: |
+    - "under:projects/MANAGEMENT_PROJECT_ID"
+  #############
   

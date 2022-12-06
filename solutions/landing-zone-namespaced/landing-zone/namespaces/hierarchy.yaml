@@ -82,7 +82,7 @@ spec:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: allow-resource-reference-from-projects
+  name: allow-hierarchy-resource-reference-from-projects
   namespace: hierarchy
   annotations:
     cnrm.cloud.google.com/ignore-clusterless: "true"
@@ -92,5 +92,22 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
 subjects:
   - name: cnrm-controller-manager-projects
+    namespace: cnrm-system
+    kind: ServiceAccount
+---
+# Grant viewer role on the hierarchy namespace to policies K8S SA
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: allow-hierarchy-resource-reference-from-policies
+  namespace: hierarchy
+  annotations:
+    cnrm.cloud.google.com/ignore-clusterless: "true"
+roleRef:
+  name: cnrm-viewer
+  kind: ClusterRole
+  apiGroup: rbac.authorization.k8s.io
+subjects:
+  - name: cnrm-controller-manager-policies
     namespace: cnrm-system
     kind: ServiceAccount

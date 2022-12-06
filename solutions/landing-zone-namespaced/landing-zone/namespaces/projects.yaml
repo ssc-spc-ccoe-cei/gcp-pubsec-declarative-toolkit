@@ -164,3 +164,54 @@ metadata:
     cnrm.cloud.google.com/blueprint: 'kpt-pkg'
 spec:
   googleServiceAccount: projects-sa@management-project-id.iam.gserviceaccount.com # kpt-set: projects-sa@${management-project-id}.iam.gserviceaccount.com
+---
+# Grant viewer role on the projects namespace to logging K8S SA
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: allow-projects-resource-reference-from-logging
+  namespace: projects
+  annotations:
+    cnrm.cloud.google.com/ignore-clusterless: "true"
+roleRef:
+  name: cnrm-viewer
+  kind: ClusterRole
+  apiGroup: rbac.authorization.k8s.io
+subjects:
+  - name: cnrm-controller-manager-logging
+    namespace: cnrm-system
+    kind: ServiceAccount
+---
+# Grant viewer role on the projects namespace to networking K8S SA
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: allow-projects-resource-reference-from-networking
+  namespace: projects
+  annotations:
+    cnrm.cloud.google.com/ignore-clusterless: "true"
+roleRef:
+  name: cnrm-viewer
+  kind: ClusterRole
+  apiGroup: rbac.authorization.k8s.io
+subjects:
+  - name: cnrm-controller-manager-networking
+    namespace: cnrm-system
+    kind: ServiceAccount
+---
+# Grant viewer role on the projects namespace to policies K8S SA
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: allow-projects-resource-reference-from-policies
+  namespace: projects
+  annotations:
+    cnrm.cloud.google.com/ignore-clusterless: "true"
+roleRef:
+  name: cnrm-viewer
+  kind: ClusterRole
+  apiGroup: rbac.authorization.k8s.io
+subjects:
+  - name: cnrm-controller-manager-policies
+    namespace: cnrm-system
+    kind: ServiceAccount

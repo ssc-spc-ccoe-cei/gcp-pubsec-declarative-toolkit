@@ -145,20 +145,3 @@ metadata:
     cnrm.cloud.google.com/ignore-clusterless: "true"
 spec:
   googleServiceAccount: networking-sa@management-project-id.iam.gserviceaccount.com # kpt-set: networking-sa@${management-project-id}.iam.gserviceaccount.com
----
-# Grant viewer role on the projects namespace to networking K8S SA
-apiVersion: rbac.authorization.k8s.io/v1
-kind: RoleBinding
-metadata:
-  name: allow-resource-reference-from-networking
-  namespace: projects
-  annotations:
-    cnrm.cloud.google.com/ignore-clusterless: "true"
-roleRef:
-  name: cnrm-viewer
-  kind: ClusterRole
-  apiGroup: rbac.authorization.k8s.io
-subjects:
-  - name: cnrm-controller-manager-networking
-    namespace: cnrm-system
-    kind: ServiceAccount
