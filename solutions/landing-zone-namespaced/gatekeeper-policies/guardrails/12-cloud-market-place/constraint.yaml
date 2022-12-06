@@ -16,8 +16,6 @@ apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: CloudMarketPlaceConfig
 metadata: # kpt-merge: /cloudmarketplaceconfig
   name: cloudmarketplaceconfig
-  annotations:
-    internal.kpt.dev/upstream-identifier: 'constraints.gatekeeper.sh|CloudMarketPlaceConfig|default|cloudmarketplaceconfig'
 spec:
   match:
     kinds:

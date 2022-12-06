@@ -19,7 +19,6 @@ metadata: # kpt-merge: /datalocation
   annotations:
     description: Establish policies to restrict GC sensitive workloads to approved geographic locations.
     reference: https://github.com/canada-ca/cloud-guardrails/blob/master/EN/05_Data-Location.md
-    internal.kpt.dev/upstream-identifier: 'templates.gatekeeper.sh|ConstraintTemplate|default|datalocation'
 spec:
   crd:
     spec:
