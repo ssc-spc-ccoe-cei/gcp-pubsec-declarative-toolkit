@@ -1,0 +1,9 @@
+apiVersion: resourcemanager.cnrm.cloud.google.com/v1beta1
+kind: Folder
+metadata:
+  name: automation.tenant1.pbmm
+  namespace: hierarchy
+spec:
+  displayName: PBMM
+  folderRef:
+    name: automation.tenant1
