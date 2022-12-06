@@ -1,0 +1,29 @@
+apiVersion: resourcemanager.cnrm.cloud.google.com/v1beta1
+kind: Folder
+metadata:
+  name: workloads.tenantn
+  namespace: hierarchy
+spec:
+  displayName: tenantn
+  folderRef:
+    name: workloads
+---
+apiVersion: resourcemanager.cnrm.cloud.google.com/v1beta1
+kind: Folder
+metadata:
+  name: workloads.tenantn.pbmm
+  namespace: hierarchy
+spec:
+  displayName: PBMM
+  folderRef:
+    name: workloads.tenantn
+---
+apiVersion: resourcemanager.cnrm.cloud.google.com/v1beta1
+kind: Folder
+metadata:
+  name: workloads.tenantn.unclass
+  namespace: hierarchy
+spec:
+  displayName: Unclass
+  folderRef:
+    name: workloads.tenantn
