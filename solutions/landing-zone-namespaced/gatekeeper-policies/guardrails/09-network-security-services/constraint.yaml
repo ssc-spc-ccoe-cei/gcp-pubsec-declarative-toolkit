@@ -14,7 +14,7 @@
 
 apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: LimitEgressTraffic
-metadata: # kpt-merge: /limitegresstraffic
+metadata:
   name: limitegresstraffic
 spec:
   match:

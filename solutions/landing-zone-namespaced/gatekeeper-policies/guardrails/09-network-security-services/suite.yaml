@@ -14,7 +14,7 @@
 
 kind: Suite
 apiVersion: test.gatekeeper.sh/v1alpha1
-metadata: # kpt-merge: /limitegresstraffic
+metadata:
   name: limitegresstraffic
   annotations:
     config.kubernetes.io/local-config: 'true'

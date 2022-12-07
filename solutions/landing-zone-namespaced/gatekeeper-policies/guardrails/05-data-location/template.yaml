@@ -14,7 +14,7 @@
 
 apiVersion: templates.gatekeeper.sh/v1
 kind: ConstraintTemplate
-metadata: # kpt-merge: /datalocation
+metadata:
   name: datalocation
   annotations:
     description: Establish policies to restrict GC sensitive workloads to approved geographic locations.

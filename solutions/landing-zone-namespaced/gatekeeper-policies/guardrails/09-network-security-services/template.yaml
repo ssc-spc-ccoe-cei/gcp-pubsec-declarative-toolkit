@@ -14,12 +14,12 @@
 
 apiVersion: templates.gatekeeper.sh/v1
 kind: ConstraintTemplate
-metadata: # kpt-merge: /limitegresstraffic
+metadata:
   name: limitegresstraffic
   annotations:
     description: Establish external and internal network perimeters and monitor network traffic.
     reference: https://github.com/canada-ca/cloud-guardrails/blob/master/EN/09_Network-Security-Services.md
-    related-security-controls: AC-3, AC‑4, SC-5, SC‑7, SC‑7(5), SI-3, SI-3(7), SI-4
+    related-security-controls: AC-3, AC-4, SC-5, SC-7, SC-7(5), SI-3, SI-3(7), SI-4
 spec:
   crd:
     spec:
@@ -40,7 +40,7 @@ spec:
           input.review.kind.kind == "ContainerCluster"
           not has_key(input.review.object.spec, "privateClusterConfig")
           msg := sprintf("GKE is not Private %s", [input.review.object.metadata.name])
-        }          
+        }
 
         # Ensure Services do not configure External IPs
         # IE Private GKE Cluster
@@ -70,7 +70,7 @@ spec:
           input.review.kind.kind == "StorageBucket"
           not has_key(input.review.object.spec, "publicAccessPrevention")
           msg := sprintf("Bucket is not Private %s", [input.review.object.metadata.name])
-        }        
+        }
 
         violation[{"msg":msg}] {
           input.review.kind.kind == "StorageBucket"

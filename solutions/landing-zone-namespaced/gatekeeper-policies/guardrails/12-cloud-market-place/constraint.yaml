@@ -14,7 +14,7 @@
 
 apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: CloudMarketPlaceConfig
-metadata: # kpt-merge: /cloudmarketplaceconfig
+metadata:
   name: cloudmarketplaceconfig
 spec:
   match:
