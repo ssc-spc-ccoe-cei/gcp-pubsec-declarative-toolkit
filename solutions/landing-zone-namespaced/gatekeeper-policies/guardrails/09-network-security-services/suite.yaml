@@ -18,7 +18,6 @@ metadata: # kpt-merge: /limitegresstraffic
   name: limitegresstraffic
   annotations:
     config.kubernetes.io/local-config: 'true'
-    internal.kpt.dev/upstream-identifier: 'test.gatekeeper.sh|Suite|default|limitegresstraffic'
 tests:
 - name: limitegresstraffic
   template: template.yaml

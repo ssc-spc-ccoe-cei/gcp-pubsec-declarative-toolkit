@@ -20,7 +20,6 @@ metadata: # kpt-merge: /cloudmarketplaceconfig
     description: Restrict Third-Party CSP Marketplace software to GC-approved products.
     reference: https://github.com/canada-ca/cloud-guardrails/blob/master/EN/12_Cloud-Marketplace-Config.md
     related-security-controls: CM‑2, CM‑3, CM‑4, CM‑5, CM‑8, SA‑22
-    internal.kpt.dev/upstream-identifier: 'templates.gatekeeper.sh|ConstraintTemplate|default|cloudmarketplaceconfig'
 spec:
   crd:
     spec:
